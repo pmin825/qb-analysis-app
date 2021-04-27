@@ -1,0 +1,35 @@
+.qb-history-item-container {
+    background-color: whitesmoke;
+    border-radius: 0px 0px 3px 3px;
+    margin-left: 40px;
+    box-shadow: 4px 4px 4px rgb(0, 0, 0);
+
+    .stat-picker {
+        min-width: 80%;
+        height: 30px;
+        background-color: whitesmoke;
+        border-radius: 3px;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 15px;
+    }
+
+    .chart {
+        min-width: 80%;
+        min-height: 400px;
+    }
+
+    option {
+        font-family: Montserrat, sans-serif;
+        cursor: pointer;
+
+        &:hover {
+            color: #d00;
+        }
+    }
+
+    .stat-selected {
+        color: #d00;
+        font-weight: bold;
+    }
+}
