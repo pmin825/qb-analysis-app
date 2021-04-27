@@ -25,8 +25,12 @@ const QbIndex = () => {
     }, [currentStat]);
 
     const fetchQbs = async () => {
+        const API =
+            process.env.NODE_ENV === "production"
+                ? "https://qb-analysis-app.herokuapp.com/qbs"
+                : "http://localhost:5000/qbs";
         try {
-            const response = await axios.get("http://localhost:5000/qbs");
+            const response = await axios.get(API);
             setQbs(response.data);
         } catch (error) {
             console.log(error);
@@ -35,8 +39,12 @@ const QbIndex = () => {
 
     const fetchQbHistory = async (qbId) => {
         qbId = currentQb;
+        const API =
+            process.env.NODE_ENV === "production"
+                ? `https://qb-analysis-app.herokuapp.com/${qbId}`
+                : `http://localhost:5000/${qbId}`;
         try {
-            const response = await axios.get(`http://localhost:5000/${qbId}`);
+            const response = await axios.get(API);
             setGameHistory(response.data);
             setYdsPerAttempt(findYdsPerAttempt(response.data));
             setCompleteRate(findCompleteRate(response.data));
@@ -48,8 +56,12 @@ const QbIndex = () => {
 
     const changeCurrentQb = (e) => {
         const qbId = e.currentTarget.value;
+        const API =
+            process.env.NODE_ENV === "production"
+                ? `https://qb-analysis-app.herokuapp.com/${qbId}`
+                : `http://localhost:5000/${qbId}`;
         axios
-            .get(`http://localhost:5000/${qbId}`)
+            .get(API)
             .then((res) => {
                 return [
                     chart(res.data),
