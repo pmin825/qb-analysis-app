@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import QbIndexItem from "./QbIndexItem";
 import QbHistory from "./QbHistory";
 import axios from "axios";
-
 import "./qbindex.styles.scss";
 
 const QbIndex = () => {
