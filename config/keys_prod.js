@@ -1,3 +1,3 @@
 module.exports = {
-    truMediaApiKey: process.env.truMediaApiKey,
+    truMediaApiKey: process.env.API_KEY,
 };
