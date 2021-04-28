@@ -66,6 +66,8 @@ const QbIndex = () => {
                     chart(res.data),
                     setGameHistory(res.data),
                     setQbName(res.data[0].fullName),
+                    setYdsPerAttempt(findYdsPerAttempt(res.data)),
+                    setCompleteRate(findCompleteRate(res.data)),
                 ];
             })
             .then(() => setCurrentQb(qbId));
