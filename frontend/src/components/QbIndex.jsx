@@ -119,9 +119,9 @@ const QbIndex = () => {
         const ydsPerAttPerGame = gameHistory.map(
             (game) => game.PsYds / game.Att
         );
-        const completeRatePerGame = gameHistory.map((game) => [
-            (game.Cmp / game.Att) * 100,
-        ]);
+        const completeRatePerGame = gameHistory.map(
+            (game) => (game.Cmp / game.Att) * 100
+        );
 
         switch (currentStat) {
             case "sackInt":
